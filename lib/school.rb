@@ -1,7 +1,7 @@
 # code here!
 class School
 
-attr_reader :roster
+attr_reader :roster #specifying exact way to change roster w add_student
 
   def initialize(name) #school setup, used initialize bc roster can't be changed
     @name = name
@@ -10,7 +10,7 @@ attr_reader :roster
 
   def add_student(student, grade)
     if !@roster.keys.include?(grade) #keys=grades
-      @roster[grade] = []
+      @roster[grade] = [] #if does not exist, create array for grades
     end
     if !@roster[grade].include?(student) #checking for student in grade
       @roster[grade] << student #putting student in grade
